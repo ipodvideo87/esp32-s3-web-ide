@@ -1,0 +1,30 @@
+{
+  "name": "ESP32-S3 Arduino Development",
+
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "platformio.platformio-ide",
+        "github.vscode-github-actions"
+      ]
+    }
+  },
+
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+
+  "remoteUser": "vscode",
+
+  "mounts": [
+    "source=arduino-cache,target=/home/vscode/.arduino15,type=volume"
+  ]
+}
